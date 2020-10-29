@@ -1,0 +1,305 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="GlassGrabAPI.Website.MasterPage" %>
+
+<!DOCTYPE html>
+
+
+<head runat="server">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="" />
+    <meta name="author" content="" />
+    <!-- Document Title -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap" rel="stylesheet">   
+     <title>glassgrab</title>
+    <link runat="server" rel="shortcut icon" href="~/favicon.ico" type="image/x-icon">
+    <link runat="server" rel="icon" href="~/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+    <!-- StyleSheets -->
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100i,300,400,700,900" rel="stylesheet">
+    <script src="js/vendors/modernizr.js"></script>
+    <script>
+        function searchClick() {
+            searchQuery = document.getElementById("searchField").value;
+            window.location.href = "Index.aspx?query=" + searchQuery;
+        }
+        function opencollapsable(evt, collapsableName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            evt.currentTarget.className += " active";
+            var element = document.getElementById(collapsableName);
+            element.style.display = "block";
+
+        }
+    </script>
+       <script src="js/vendors/jquery/jquery.min.js"></script> 
+      <script src="js/vendors/wow.min.js"></script> 
+      <script src="js/vendors/bootstrap.min.js"></script> 
+      <script src="js/vendors/own-menu.js"></script> 
+      <script src="js/vendors/jquery.sticky.js"></script> 
+      <script src="js/vendors/owl.carousel.min.js"></script> 
+      <!-- SLIDER REVOLUTION 4.x SCRIPTS  --> 
+     
+      <script src="js/main.js"></script> 
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<html>
+
+<body>
+    <div id="wrap" class="layout-4 red">
+
+        <header style="background-color:#69e150">
+        <div class="container" >
+          <div class="logo"> <a href="Index.aspx"><img src="web-image/logo.png" alt="" ></a> </div>
+          <div class="search-cate">
+            <input type="search" id="searchField" placeholder="Search glassgrab...">
+            <button class="submit" type="submit" onclick="searchClick()"><i class="fa fa-search"></i></button>
+          </div>
+          <!-- Cart Part -->
+          <div class="nav navbar-right cart-pop" style="padding-top:15px;">
+        
+              <a href="Login.aspx" id="login" runat="server" style="color:white; font-family:Helvetica; font-size:16px;">Login/Register</a>  <a href="https://www.facebook.com/glassgrab" ><i class="fa fa-facebook" style="color:white;"></i></a> <a href="https://instagram.com/glassgrabapp"><i class="fa fa-instagram" style="color:white;"></i></a>
+       
+      
+          </div>
+        </div>
+        <!-- Nav -->
+        <nav class="navbar ownmenu" style="background-color:#69e150">
+          <div class="container">
+            <!-- Categories -->
+            <!-- Navbar Header -->
+           <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-open-btn" aria-expanded="false"> <span><i class="fa fa-navicon"></i></span> </button>
+            </div>
+            <!-- NAV -->
+            <div class="collapse navbar-collapse" id="nav-open-btn">
+              <ul class="nav">
+                <li class="dropdown megamenu "> <a href="Index.aspx">Home </a>
+                </li>
+                <li > <a href="Messages.aspx">Messages </a>
+                </li>
+                <!-- Mega Menu Nav -->
+                <li > <a href="Transactions.aspx" >Transactions</a>
+                </li>
+                <li > <a href="MyProfile.aspx">My Profile</a>
+                </li>
+                <li> <a href="FAQ.aspx">FAQ</a></li>
+                <li>
+                    
+                      <a href="MakeAListing.aspx" class="btn-round btn-light" ><i class="fa fa-camera"  aria-hidden="true"></i>
+                      </a>
+                      <!-- <a href="#." class="btn-round" style="background-color:#000;">Go Payment Methods</a>  -->
+               
+                  </li>
+              </ul>
+            </div>
+            <!-- NAV RIGHT -->
+            <!-- <div class="nav-right"> <span class="call-mun"><i class="fa fa-phone"></i> <strong>Hotline:</strong> (+100) 123 456 7890</span> </div> -->
+          </div>
+        </nav>
+      </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer>
+        <div class="container">
+          <!-- Footer Upside Links -->
+          <div class="row">
+            <div class="">
+              <div class="">
+                <p>
+                  <%--<a href="#" class="btn btn-store">
+                  <span class="fa fa-android fa-3x pull-left"></span>
+                  <span class="btn-label">Download on</span>
+                  <span class="btn-caption">Google Play</span>
+                  </a>--%>
+                    <a href="https://apps.apple.com/us/app/glassgrab-buy-sell-glass/id1473679910?mt=8" class="btn btn-store">
+                  <span class="fa fa-apple fa-3x pull-left"></span>
+                  <span class="btn-label">Download on the</span>
+                  <span class="btn-caption">App Store</span>
+                 
+                  </a>
+                      </p>
+              </div>
+            </div>
+            <!-- Contact -->
+            <div class="col-md-4">
+               
+              <h4>Contact glassgrab</h4>
+              <p>Email: support@glassgrab.com</p>
+              <div class="social-links"> <a href="https://www.facebook.com/glassgrab"><i class="fa fa-facebook"></i></a> <a href="https://instagram.com/glassgrabapp"><i class="fa fa-instagram"></i></a></div>
+            </div>
+            <!-- Categories -->
+            <div class="col-md-3">
+              
+            </div>
+            <!-- Categories -->
+            <div class="col-md-3">
+               <h6>glassgrab connects buyers and sellers of glass art.</h6>
+            </div>
+            <!-- Categories -->
+            <div class="col-md-2">
+              <h4>Information</h4>
+              <ul class="links-footer">
+                <li><a href="FAQ.aspx">FAQ</a></li>
+                <li><a href="Terms-and-Conditions.html">Terms and Conditions</a></li>
+                <li><a href="Privacy-Policy.html">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Rights -->
+      <div class="rights">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>Copyright © 2019 <a href="" class="ri-li"> glassgrab </a></p>
+            </div>
+            <div class="col-sm-6 text-right"> <img src="images/card-icon.png" alt=""> </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Footer -->
+      <!-- GO TO TOP  -->
+      <a href="#" class="cd-top"><i class="fa fa-angle-up"></i></a>
+      <!-- GO TO TOP End -->
+    </div>
+    <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+    
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel2">UPLOAD YOUR LISTING PRODUCTS</h4>
+            </div>
+    
+            <div class="modal-body">
+                <form class="md-form">
+                    <div class="file-field">
+                      <div class="z-depth-1-half mb-4 "  style="text-align:center">
+                        <img src="web-image/upload-image.png" class="img-fluid"
+                          alt="example placeholder">
+                      </div>
+                      <div class="proo-btn " style="text-align:center"> 
+                       <a href="#." class="btn-round btn-light file">Upload File</a> 
+                       </div>
+                    </div>
+                  </form>
+                  <div class="contact">
+                      <div class="contact-form"> 
+                        <!-- FORM  -->
+                        <form role="form" id="contact_form" class="contact-form" method="post" onsubmit="return false">
+                          <div class="row" >
+                              <div class="col-md-12">
+                                  <div class="contact-info" style="margin-top:3% !important;">
+                                    <div class="row" style="padding:0 50px;">
+                                    <div class="col-md-3">
+                                        <img src="web-image/glass-icon.png" class="image-size">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="web-image/glass-icon-2.png" class="image-size">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="web-image/glass-icon-3.png" class="image-size">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="web-image/glass-icon-4.png" class="image-size">
+                                    </div>
+                                  </div>
+                                    <div class="row padding" hidden>
+                                    <div class="col-md-4">
+                                        <img src="web-image/upload-image.png" class="image-size">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="web-image/upload-image.png" class="image-size">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="web-image/upload-image.png" class="image-size">
+                                    </div>
+                                  </div>
+                                  </div>
+                                </div>
+                            <div class="col-md-12"> 
+                                
+                              <!-- Payment information -->
+                              <div class="heading">
+                                
+                              </div>
+                              <ul class="row">
+                                <li class="col-sm-6">
+                                  <label>Title
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="">
+                                  </label>
+                                </li>
+                                <li class="col-sm-6">
+                                  <label>Select Brand
+                                      <select class="browser-default custom-select form-control">
+                                          <option selected>Open this select menu</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                        </select>
+                                  </label>
+                                </li>
+                                <li class="col-sm-12">
+                                    <label>Select Condition
+                                        <select class="browser-default custom-select form-control" style="height: 40px !important;">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                          </select>
+                                    </label>
+                                  </li>
+                                  <li class="col-sm-6">
+                                      <label>Price
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="">
+                                      </label>
+                                    </li>
+                                    <li class="col-sm-6">
+                                        <label>Shipping Price
+                                          <input type="text" class="form-control" name="name" id="name" placeholder="">
+                                        </label>
+                                      </li>
+                                <li class="col-sm-12">
+                                  <label>Description
+                                    <textarea class="form-control" name="message" id="message" rows="3" placeholder=""></textarea>
+                                  </label>
+                                </li>
+                                <li class="col-sm-12 no-margin">
+                                  <button type="submit" value="submit" class="btn-round" id="btn_submit" onclick="proceed();">Publish</button>
+                                </li>
+                              </ul>
+                            </div>
+                            
+                            <!-- Conatct Infomation -->
+                           
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  
+            </div>
+    
+          </div><!-- modal-content -->
+        </div><!-- modal-dialog -->
+      </div><!-- modal -->
+      
+</body>
+</html>
